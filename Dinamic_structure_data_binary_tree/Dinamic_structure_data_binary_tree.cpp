@@ -27,6 +27,7 @@ public:
     void ObhodEnd(node**);
     void ObhodLeft(node**);
     void ObhodBack(node**);
+    void Swap(node**);
     void Vyvod(node**, int);
     int Height(node**);
 };
@@ -68,6 +69,11 @@ void TREE::Search(int x, node** p)
         else
             if (x > (**p).Key) Search(x, &((**p).Right));
             else (**p).Count = (**p).Count + 1;
+}
+void TREE::Swap(T & a, T & b) {
+        T tmp(std::move(a));
+        a = std::move(b);
+        b = std::move(tmp);
 }
 void TREE::ObhodLeft(node** w)
 {
